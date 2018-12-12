@@ -13,6 +13,10 @@
 		FB80E2FF21C14D21003C7951 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB80E2FD21C14D21003C7951 /* LaunchScreen.storyboard */; };
 		FB80E30721C1501A003C7951 /* PlaylistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80E30621C1501A003C7951 /* PlaylistTableViewController.swift */; };
 		FB80E30921C1503C003C7951 /* SongsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80E30821C1503C003C7951 /* SongsTableViewController.swift */; };
+		FBC54F3C21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F3A21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld */; };
+		FBC54F3E21C183D300EC7B81 /* Playlist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */; };
+		FBC54F4021C1852800EC7B81 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */; };
+		FBC54F4221C18B6900EC7B81 /* Song+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		FB80E30021C14D21003C7951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB80E30621C1501A003C7951 /* PlaylistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableViewController.swift; sourceTree = "<group>"; };
 		FB80E30821C1503C003C7951 /* SongsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewController.swift; sourceTree = "<group>"; };
+		FBC54F3B21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlaylistCoreData.xcdatamodel; sourceTree = "<group>"; };
+		FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playlist+Convenience.swift"; sourceTree = "<group>"; };
+		FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,10 @@
 		FB80E2E821C14D20003C7951 = {
 			isa = PBXGroup;
 			children = (
+				FBC54F3A21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld */,
+				FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */,
+				FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */,
+				FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */,
 				FB80E2F321C14D20003C7951 /* PlaylistCoreData */,
 				FB80E2F221C14D20003C7951 /* Products */,
 			);
@@ -163,8 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB80E30921C1503C003C7951 /* SongsTableViewController.swift in Sources */,
+				FBC54F3E21C183D300EC7B81 /* Playlist+Convenience.swift in Sources */,
 				FB80E2F521C14D20003C7951 /* AppDelegate.swift in Sources */,
+				FBC54F4021C1852800EC7B81 /* CoreDataStack.swift in Sources */,
+				FBC54F3C21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld in Sources */,
 				FB80E30721C1501A003C7951 /* PlaylistTableViewController.swift in Sources */,
+				FBC54F4221C18B6900EC7B81 /* Song+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +380,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FBC54F3A21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FBC54F3B21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodel */,
+			);
+			currentVersion = FBC54F3B21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodel */;
+			path = PlaylistCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FB80E2E921C14D20003C7951 /* Project object */;
 }
