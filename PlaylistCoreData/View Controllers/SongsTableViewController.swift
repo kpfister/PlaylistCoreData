@@ -11,50 +11,54 @@ import UIKit
 class SongsTableViewController: UITableViewController {
     
     //MARK: Outlets
-
+    var playlistLandingPad: Playlist?// Source of Truth
+    
+    @IBOutlet weak var artistNameTextField: UITextField!
+    @IBOutlet weak var songNameTextField: UITextField!
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    @IBAction func plusButtonTapped(_ sender: Any) {
+        
+        guard let songName = songNameTextField.text, let artistName = artistNameTextField.text, let playlist = playlistLandingPad else { return }
+        // Create the song
+        SongController.sharedInstance.createSong(songWithTitle: songName, artist: artistName, playlist: playlist)
+        
+        // Clean up the dust
+        songNameTextField.text = ""
+        artistNameTextField.text = ""
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("🐸\(playlistLandingPad?.songs?.count ?? 0)🤢")
+        return playlistLandingPad?.songs?.count ?? 0
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
 
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath)
+        
+        guard let unwrapppedPlaylist = playlistLandingPad else { return UITableViewCell() }
+        if let song = unwrapppedPlaylist.songs?[indexPath.row] as? Song {
+            cell.textLabel?.text = song.title
+            cell.detailTextLabel?.text = song.artist
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let playlist = playlistLandingPad else { return }
+            guard let song = playlist.songs?[indexPath.row] as? Song else { return }
+            SongController.sharedInstance.deleteSong(song: song)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

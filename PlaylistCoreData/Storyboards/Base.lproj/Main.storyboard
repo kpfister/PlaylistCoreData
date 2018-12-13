@@ -36,7 +36,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="fkh-6D-6qA" detailTextLabel="Nr1-OI-CEp" style="IBUITableViewCellStyleValue1" id="SgM-FC-CDu">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playlistCell" textLabel="fkh-6D-6qA" detailTextLabel="Nr1-OI-CEp" style="IBUITableViewCellStyleValue1" id="SgM-FC-CDu">
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SgM-FC-CDu" id="SpX-Xn-Pg9">
@@ -60,7 +60,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Web-o8-AVd" kind="show" identifier="" id="wy5-4B-Ljc"/>
+                                    <segue destination="Web-o8-AVd" kind="show" identifier="ToDetailVC" id="wy5-4B-Ljc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -73,14 +73,17 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="err-d0-8pF">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="Web-o8-AVd" kind="show" identifier="toSongsTBVC" id="fSa-Cp-Dlr"/>
+                                <action selector="addButtonTapped:" destination="k55-Nz-odI" id="39e-60-b26"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playlistNameLabel" destination="S8D-QE-Mnl" id="CFm-F1-iao"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6o-NM-he5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704.79999999999995" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="481" y="-3"/>
         </scene>
         <!--Songs Table View Controller-->
         <scene sceneID="acz-Uf-Ala">
@@ -94,13 +97,13 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLB-iv-u4P">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Artist Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mLB-iv-u4P">
                                     <rect key="frame" x="8" y="8" width="359" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-mm-70s">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Song Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-mm-70s">
                                     <rect key="frame" x="8" y="46" width="359" height="30"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -118,7 +121,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="z1B-Gc-FMD" detailTextLabel="Wct-Zq-Sw3" style="IBUITableViewCellStyleSubtitle" id="NnZ-0j-Hlz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" textLabel="z1B-Gc-FMD" detailTextLabel="Wct-Zq-Sw3" style="IBUITableViewCellStyleSubtitle" id="NnZ-0j-Hlz">
                                 <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NnZ-0j-Hlz" id="rab-oT-xYP">
@@ -149,8 +152,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="XwE-IY-jca">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xFd-AH-bGH"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xFd-AH-bGH">
+                            <connections>
+                                <action selector="plusButtonTapped:" destination="Web-o8-AVd" id="PZC-MV-G7f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="artistNameTextField" destination="mLB-iv-u4P" id="WwA-ft-j53"/>
+                        <outlet property="songNameTextField" destination="2fd-mm-70s" id="znG-wT-H6B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCj-jC-cL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,10 +188,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZr-yF-QQK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8.8000000000000007" y="-3.1484257871064472"/>
+            <point key="canvasLocation" x="-386" y="-3"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="wy5-4B-Ljc"/>
-    </inferredMetricsTieBreakers>
 </document>

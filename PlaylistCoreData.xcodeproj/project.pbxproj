@@ -17,6 +17,8 @@
 		FBC54F3E21C183D300EC7B81 /* Playlist+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */; };
 		FBC54F4021C1852800EC7B81 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */; };
 		FBC54F4221C18B6900EC7B81 /* Song+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */; };
+		FBC54F4521C18FB300EC7B81 /* PlaylistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F4421C18FB300EC7B81 /* PlaylistController.swift */; };
+		FBC54F4721C1A9FD00EC7B81 /* SongController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC54F4621C1A9FD00EC7B81 /* SongController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playlist+Convenience.swift"; sourceTree = "<group>"; };
 		FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Song+Convenience.swift"; sourceTree = "<group>"; };
+		FBC54F4421C18FB300EC7B81 /* PlaylistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistController.swift; sourceTree = "<group>"; };
+		FBC54F4621C1A9FD00EC7B81 /* SongController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,10 +52,6 @@
 		FB80E2E821C14D20003C7951 = {
 			isa = PBXGroup;
 			children = (
-				FBC54F3A21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld */,
-				FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */,
-				FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */,
-				FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */,
 				FB80E2F321C14D20003C7951 /* PlaylistCoreData */,
 				FB80E2F221C14D20003C7951 /* Products */,
 			);
@@ -68,6 +68,8 @@
 		FB80E2F321C14D20003C7951 /* PlaylistCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				FBC54F4321C18F3700EC7B81 /* Model */,
+				FBC54F4821C1AC2800EC7B81 /* Model Controllers */,
 				FB80E30A21C15145003C7951 /* View Controllers */,
 				FB80E30C21C15169003C7951 /* Storyboards */,
 				FB80E30B21C1515D003C7951 /* Source Files */,
@@ -101,6 +103,26 @@
 				FB80E2FD21C14D21003C7951 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FBC54F4321C18F3700EC7B81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBC54F3A21C17EF200EC7B81 /* PlaylistCoreData.xcdatamodeld */,
+				FBC54F3D21C183D300EC7B81 /* Playlist+Convenience.swift */,
+				FBC54F4121C18B6900EC7B81 /* Song+Convenience.swift */,
+				FBC54F3F21C1852800EC7B81 /* CoreDataStack.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBC54F4821C1AC2800EC7B81 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBC54F4421C18FB300EC7B81 /* PlaylistController.swift */,
+				FBC54F4621C1A9FD00EC7B81 /* SongController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +196,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC54F4721C1A9FD00EC7B81 /* SongController.swift in Sources */,
 				FB80E30921C1503C003C7951 /* SongsTableViewController.swift in Sources */,
+				FBC54F4521C18FB300EC7B81 /* PlaylistController.swift in Sources */,
 				FBC54F3E21C183D300EC7B81 /* Playlist+Convenience.swift in Sources */,
 				FB80E2F521C14D20003C7951 /* AppDelegate.swift in Sources */,
 				FBC54F4021C1852800EC7B81 /* CoreDataStack.swift in Sources */,
